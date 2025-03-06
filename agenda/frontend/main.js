@@ -11,13 +11,8 @@ cadastro.init();
 
 import Contato from './modules/Contato';
 
-const nome = new Contato('.form-nome');
-const sobrenome = new Contato('.form-sobrenome');
-const email = new Contato('.form-email');
-const telefone = new Contato('.form-fone');
-nome.init();
-sobrenome.init();
-email.init();
-fone.init();
+const contato = new Contato('.form-contato');
+
+contato.init();
 
 import './assets/css/style.css';

@@ -17,6 +17,7 @@ export default class Login {
     
     }
     validade(e) {
+        console.log(e);
         const el = e.target;
         const emailInput = el.querySelector('input[name="email"]');
         const passwordInput = el.querySelector('input[name="password"]');
