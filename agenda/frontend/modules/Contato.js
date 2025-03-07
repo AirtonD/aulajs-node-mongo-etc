@@ -28,19 +28,19 @@ export default class Contato {
             errorText.remove();
         }
 
-        if (nomeInput) {
+        if (!nomeInput.value) {
             this.criaErro(nomeInput, "Nome é obrigatório.");
             error = true;
         }
-        if (sobrenomeInput) {
+        if (!sobrenomeInput.value) {
             this.criaErro(sobrenomeInput, "Sobrenome é obrigatório.");
             error = true;
         }
-        if (emailInput && !validator.isEmail(emailInput.value)) {
+        if (emailInput.value && !validator.isEmail(emailInput.value)) {
             this.criaErro(emailInput, "E-mail inválido!");
             error = true;
         }
-        if (telefoneInput && emailInput) {
+        if (!telefoneInput.value && !emailInput.value) {
             this.criaErro(emailInput, "Pelo menos um contato precisa ser inserido.");
             this.criaErro(telefoneInput, "Pelo menos um contato precisa ser inserido.");
             error = true;
