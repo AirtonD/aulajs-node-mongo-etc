@@ -2,5 +2,12 @@
   "name": "CursoJS",
   "lockfileVersion": 3,
   "requires": true,
-  "packages": {}
+  "packages": {},
+  "dependencies": {
+    "mariadb": "^3.4.1",
+    "sequelize": "^6.37.7"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.6.2"
+  }
 }
