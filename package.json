@@ -1,5 +1,5 @@
 {
-  "name": "CursoJS",
+  "name": "cursojs",
   "lockfileVersion": 3,
   "requires": true,
   "packages": {},
@@ -9,5 +9,22 @@
   },
   "devDependencies": {
     "sequelize-cli": "^6.6.2"
-  }
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AirtonD/aulajs-node-mongo-etc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AirtonD/aulajs-node-mongo-etc/issues"
+  },
+  "homepage": "https://github.com/AirtonD/aulajs-node-mongo-etc#readme",
+  "description": ""
 }
