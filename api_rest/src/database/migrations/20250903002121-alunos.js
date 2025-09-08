@@ -6,7 +6,7 @@ module.exports = {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        autoIncrement: true,
+        autoIncrement: 1,
         primaryKey: true,
       },
       nome: {
@@ -33,11 +33,11 @@ module.exports = {
         type: Sequelize.FLOAT,
         allowNull: false,
       },
-      createdAt: {
+      created_at: {
         type: Sequelize.DATE,
         allowNull: false,
       },
-      updatedAt: {
+      updated_at: {
         type: Sequelize.DATE,
         allowNull: false,
       },
