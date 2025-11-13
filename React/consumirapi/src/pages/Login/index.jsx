@@ -1,0 +1,31 @@
+import React from "react";
+import { useDispatch } from "react-redux";
+
+import { Container } from "../../styles/GlobalStyles";
+import { Title, Paragrafo } from "./styled";
+import * as actions from "../../store/modules/example/actions";
+
+export default function Login() {
+  const dispatch = useDispatch();
+
+  function handleClick(e) {
+    e.preventDefault();
+    dispatch(actions.clicaBotaoRequest());
+  }
+  return (
+    <>
+      <Container>
+        <Title>
+          Login
+          <small> Olá</small>
+        </Title>
+        <Paragrafo>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
+        </Paragrafo>
+        <button type="button" onClick={handleClick}>
+          Enviar
+        </button>
+      </Container>
+    </>
+  );
+}
