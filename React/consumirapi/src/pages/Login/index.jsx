@@ -1,30 +1,55 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+
+import { toast } from "react-toastify";
+import { isEmail } from "validator";
+import { useDispatch } from 'react-redux';
 
 import { Container } from "../../styles/GlobalStyles";
-import { Title, Paragrafo } from "./styled";
-import * as actions from "../../store/modules/example/actions";
+import { Form } from "./styled";
+import * as actions from "../../store/modules/auth/actions";
 
 export default function Login() {
   const dispatch = useDispatch();
 
-  function handleClick(e) {
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+
+  async function handleSubmit(e) {
     e.preventDefault();
-    dispatch(actions.clicaBotaoRequest());
+    let formErrors = false;
+
+    if (password.length < 6 || password.length > 50) {
+      formErrors = true;
+      toast.error("Senha inválida");
+    }
+    if (!isEmail(email)) {
+      formErrors = true;
+      toast.error("E-mail inválido");
+    }
+
+    if (formErrors) return;
+
+    dispatch(actions.loginRequest({ email, password }));
   }
+
   return (
     <>
       <Container>
-        <Title>
-          Login
-          <small> Olá</small>
-        </Title>
-        <Paragrafo>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
-        </Paragrafo>
-        <button type="button" onClick={handleClick}>
-          Enviar
-        </button>
+        <h1> Login </h1>
+
+        <Form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button type="submit">Acessar</button>
+        </Form>
       </Container>
     </>
   );
